@@ -447,6 +447,30 @@ footer {
   /* margin-top: 6rem; */
 }
 
+/* Fix footer columns */
+.footer-content.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns layout */
+  gap: 2rem;
+}
+
+/* Make logo section full width */
+.footer-section:first-child {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* Maintain existing mobile layout */
+@media (max-width: 768px) {
+  .footer-content.container {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-section:first-child {
+    grid-column: auto;
+  }
+}
+
 .footer-content {
     grid-template-columns: repeat(3, 1fr);
   gap: 2rem; /* Reduced from 4rem */
@@ -1143,6 +1167,92 @@ blockquote {
   background: rgba(255, 255, 255, 0.1);
 }
 
+
+/* New Footer Structure */
+footer {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 4rem 0 1rem;
+  margin-top: auto;
+}
+
+.footer-content.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.footer-logo-section {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* Quick Links Column */
+.footer-links-column {
+  text-align: left;
+  padding-right: 2rem;
+}
+
+/* Contact Info Column */
+.footer-contact-column {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .footer-main-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-links-column,
+  .footer-contact-column {
+    padding: 0;
+    text-align: center;
+  }
+  
+  .footer-links li,
+  .footer-contact li {
+    justify-content: center;
+  }
+}/* Add this to center social links */
+.footer-logo-section .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.footer-links-column h4, .footer-contact-column h4 {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+.footer-logo-text {
+  color: var(--secondary-color);
+  font-weight: 700;
+    font-size: 1.2rem;
+}
+.footer-logo-image {
+    height: 150px;
+    width: auto;
+}
   </style>
 </head>
 <body>
@@ -1377,42 +1487,44 @@ blockquote {
   </main>
   <footer>
     <div class="footer-content container">
-      <div class="footer-section">
+      <div class="footer-logo-section">
         <div class="footer-logo">
-            <img src="images/logo-1.png" alt="RABY'S SADAQA" class="footer-logo-image">
-        <div class="footer-logo-text">RABY’S SADAQA</div>
-        <p data-i18n="footerTagline">Empowering communities through sustainable solutions</p>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <img src="images/logo-1.png" alt="RABY'S SADAQA" class="footer-logo-image">
+          <div class="footer-logo-text">RABY’S SADAQA</div>
+          <p data-i18n="footerTagline">Empowering communities through sustainable solutions</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
   
-      <div class="footer-section">
-        <h4 data-i18n="footerQuickLinks">Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="#about" data-i18n="navAbout">About Us</a></li>
+      <div class="footer-main-content">
+        <div class="footer-links-column">
+          <h4 data-i18n="footerQuickLinks">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about" data-i18n="navAbout">About Us</a></li>
           <li><a href="#programs" data-i18n="navPrograms">Programs</a></li>
           <li><a href="#donate" data-i18n="navDonate">Donate</a></li>
           <li><a href="#contact" data-i18n="navContact">Contact</a></li>
-        </ul>
-      </div>
+          </ul>
+        </div>
   
-      <div class="footer-section">
-        <h4 data-i18n="footerContact">Contact Info</h4>
-        <ul class="footer-links">
-          <li><i class="fas fa-map-marker-alt"></i> 123 Charity St, Dakar, Senegal</li>
+        <div class="footer-contact-column">
+          <h4 data-i18n="footerContact">Contact Info</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 123 Charity St, Dakar, Senegal</li>
           <li><i class="fas fa-phone"></i> +221 70 123 4567</li>
           <li><i class="fas fa-envelope"></i> rabyssadaqa@gmail.com</li>
-        </ul>
+          </ul>
+        </div>
       </div>
-    </div>
   
-    <div class="footer-bottom">
-      <p data-i18n="copyright">&copy; 2024 RABY’S SADAQA. All rights reserved.</p>
-      <!-- <p data-i18n="registeredNGO">Registered NGO under Senegalese Law</p> -->
+      <div class="footer-bottom">
+        <p data-i18n="copyright">&copy; 2024 RABY’S SADAQA. All rights reserved.</p>
+      </div>
     </div>
   </footer>
   <button id="scrollTopBtn" aria-label="Scroll to top">
