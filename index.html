@@ -294,34 +294,28 @@
     /* Program Cards */
     .program-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
     }
 
     .program-card {
       perspective: 1000px;
-      position: relative;
-      min-height: 400px;
-      cursor: pointer;
-      transition: var(--transition);
-      transform-style: preserve-3d;
+  height: auto; /* Allow it to grow with content */
+  min-height: 340px; /* Optional: ensure it has a minimum height */
+  position: relative;
     }
 
     .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
       backface-visibility: hidden;
-      transition: transform 0.6s;
-      padding: 2rem;
-      background: white;
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.6s ease;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .card-front {
@@ -331,6 +325,8 @@
 
     .card-back {
       transform: rotateY(180deg);
+  overflow-y: auto;
+  max-height: none; /* Important to allow full height */
       z-index: 1;
     }
 
@@ -341,7 +337,10 @@
     .program-card.active .card-back {
       transform: rotateY(0deg);
     }
-
+    .program-grid,
+.container {
+  overflow: visible;
+}
     .program-icon {
       font-size: 2.5rem;
       color: var(--primary-color);
@@ -703,7 +702,7 @@ footer {
       }
 
       .program-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
       }
     }
 
@@ -725,8 +724,9 @@ footer {
   display: inline-block;
   color: var(--primary-color);
   text-decoration: none;
+  font-size: 0.85rem; /* Smaller font size for Learn More */
   font-weight: 600;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   position: relative;
   padding: 0.8rem 1.5rem;
   border: 2px solid var(--primary-color);
@@ -750,6 +750,9 @@ footer {
 
 .program-link:hover::after {
   transform: translateX(3px);
+}
+.card-front h3{
+  font-size: 1rem;
 }
 /* Close Button Styling */
 .btn-close {
@@ -1253,13 +1256,129 @@ footer {
     height: 150px;
     width: auto;
 }
+.mission-section {
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mission-section .section-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mission-block {
+  margin-bottom: 40px;
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+}
+
+.values-list li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.values-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+---
+.org-structure-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 50px;
+}
+
+.org-category {
+  margin-bottom: 40px;
+}
+
+.org-heading {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  border-left: 5px solid var(--primary-color);
+  padding-left: 15px;
+}
+
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.org-card {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-left: 5px solid var(--primary-color);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  gap: 15px;
+}
+
+.org-card:hover {
+  transform: translateY(-5px);
+}
+
+.org-photo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+}
+
+.org-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.org-card strong {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.org-card span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  opacity: 0.85;
+}
+
   </style>
 </head>
 <body>
     <nav class="navbar">
           <a href="/" class="logo-container">
             <!-- Logo Image -->
-            <img src="images/logo-1.png" alt="RABY’S SADAQA - Charity Organization" class="logo-image">
+            <img src="images/Raby_Sadaqa_logo.png" alt="RABY’S SADAQA - Charity Organization" class="logo-image">
             <!-- Text that will be hidden on mobile -->
             <span class="logo-text">RABY’S SADAQA</span>
           </a>
@@ -1312,87 +1431,182 @@ footer {
       </div>
     </section>
 
-    <section id="programs" class="section programs">
-        <div class="container">
-          <h2 class="section-title" data-i18n="programsTitle">Our Core Programs</h2>
-          <div class="program-grid">
-            <!-- Healthcare Card -->
-            <div class="program-card animate" onclick="toggleDetails(event)">
-              <div class="card-front">
-                <div class="program-icon">
-                  <i class="fas fa-heartbeat"></i>
-                </div>
-                <h3 data-i18n="healthcareTitle">Healthcare Access</h3>
-                <p data-i18n="healthcareText">Mobile clinics and essential medicine distribution</p>
-                <div class="program-link" data-i18n="learnMore">Learn More →</div>
+    <section class="mission-section" id="mission">
+      <div class="container">
+        <h2 class="section-title">Mission Statement</h2>
+    
+        <div class="mission-block">
+          <!-- <h3 class="subsection-title">Executive Summary</h3> -->
+          <p>Raby's Sadaqa is a humanitarian association committed to bringing hope, comfort, and vital support to sick and disadvantaged children, with a primary focus on Senegal, but extending its reach to the United States, Canada, and beyond. We provide essential resources—clothing, shoes, food, medication, toiletries, and more—while also offering emotional and moral support through hospital visits and sponsorship programs for orphans. Our mission is rooted in compassion, aiming to empower children and foster sustainable well-being within vulnerable communities.</p>
+    
+          <!-- <p><strong>Vision Statement:</strong> Our vision is a future where every child has access to basic necessities, education, and opportunities for a better life. We aspire to build a donor-driven, self-sustaining initiative that uplifts children and communities, particularly in Senegal, through lasting change and compassionate support.</p> -->
+        </div>
+    
+        <div class="mission-block">
+          <h3 class="subsection-title">Core Values</h3>
+          <ul class="values-list">
+            <li><strong>Compassion:</strong> Showing empathy and emotional support to children in need, especially during hospital visits and outreach efforts.</li>
+            <li><strong>Community:</strong> Driving collective impact through local engagement and collaboration.</li>
+            <li><strong>Sustainability:</strong> Creating long-term solutions in health, education, and self-sufficiency for future generations.</li>
+            <li><strong>Transparency:</strong> Maintaining open and honest communication with donors and stakeholders about resource allocation.</li>
+            <li><strong>Empowerment:</strong> Providing the tools and opportunities for children and communities to thrive independently.</li>
+          </ul>
+        </div>
+    
+        <!-- <div class="mission-block">
+          <h3 class="subsection-title">Legal Status</h3>
+          <p>Raby’s Sadaqa plans to register as a 501(c)(3) nonprofit organization in the United States and establish formal NGO status in Senegal to effectively operate locally and expand our reach.</p>
+        </div> -->
+      </div>
+    </section>
+
+    <section class="org-structure-section">
+      <div class="container">
+        <h2 class="section-title">Our Team</h2>
+    
+        <div class="org-category">
+          <h3 class="org-heading">Founders & Leadership</h3>
+          <div class="org-grid">
+            <div class="org-card">
+              <img src="images/zaina-profile.png" alt="Ndeye Thioye" class="org-photo">
+              <div class="org-info">
+                <strong>President</strong>
+                <span>Ndeye Thioye</span>
               </div>
-              <!-- Healthcare Initiatives Card Back -->
-<div class="card-back">
-    <h4 data-i18n="healthcareInitiativesTitle">Healthcare Initiatives</h4>
-    <ul class="program-details">
-      <li data-i18n="healthcareInitiatives1">📌 Monthly mobile clinics serving 50+ villages</li>
-      <li data-i18n="healthcareInitiatives2">💊 Free essential medicines distribution</li>
-      <li data-i18n="healthcareInitiatives3">👩⚕️ Trained community health workers</li>
-      <li data-i18n="healthcareInitiatives4">💉 Vaccination programs for children</li>
-    </ul>
-    <button class="btn-close" onclick="toggleDetails(event)">
-      <i class="fas fa-times"></i> <span data-i18n="closeButton">Close</span>
-    </button>
-  </div>
             </div>
-      
-            <!-- Education Card -->
-            <div class="program-card animate" onclick="toggleDetails(event)">
-              <div class="card-front">
-                <div class="program-icon">
-                  <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3 data-i18n="educationTitle">Education Support</h3>
-                <p data-i18n="educationText">School supplies and infrastructure development</p>
-                <div class="program-link" data-i18n="learnMore">Learn More →</div>
+            <div class="org-card">
+              <img src="images/soukeyna-profile.png" alt="Soukeyna Traore-Dia" class="org-photo">
+              <div class="org-info">
+                <strong>Vice President</strong>
+                <span>Soukeyna Traore-Dia</span>
               </div>
-              <!-- Education Programs Card Back -->
-<div class="card-back">
-    <h4 data-i18n="educationProgramsTitle">Education Programs</h4>
-    <ul class="program-details">
-      <li data-i18n="educationPrograms1">📚 Annual school kits for 10,000+ students</li>
-      <li data-i18n="educationPrograms2">🏫 15 new schools built in 2023</li>
-      <li data-i18n="educationPrograms3">👩🏫 Teacher training programs</li>
-      <li data-i18n="educationPrograms4">💻 Digital literacy initiatives</li>
-    </ul>
-    <button class="btn-close" onclick="toggleDetails(event)">
-      <i class="fas fa-times"></i> <span data-i18n="closeButton">Close</span>
-    </button>
-  </div>
             </div>
-      
-            <!-- Essential Goods Card -->
-            <div class="program-card animate" onclick="toggleDetails(event)">
-              <div class="card-front">
-                <div class="program-icon">
-                  <i class="fas fa-tshirt"></i>
-                </div>
-                <h3 data-i18n="goodsTitle">Essential Goods</h3>
-                <p data-i18n="goodsText">Clothing, food packages, and hygiene kits</p>
-                <div class="program-link" data-i18n="learnMore">Learn More →</div>
+            <div class="org-card">
+              <img src="images/profile.png" alt="Placeholder" class="org-photo">
+              <div class="org-info">
+                <strong>Treasurer</strong>
+                <span>Khadija Ba</span>
               </div>
-              <!-- Essential Goods Distribution Card Back -->
-<div class="card-back">
-    <h4 data-i18n="essentialsDistributionTitle">Essential Goods Distribution</h4>
-    <ul class="program-details">
-      <li data-i18n="essentialsDistribution1">👕 50,000+ clothing items distributed annually</li>
-      <li data-i18n="essentialsDistribution2">🥫 Weekly food packages for families in need</li>
-      <li data-i18n="essentialsDistribution3">🧼 Hygiene kits with sanitation supplies</li>
-      <li data-i18n="essentialsDistribution4">🛒 Community pantry programs</li>
-    </ul>
-    <button class="btn-close" onclick="toggleDetails(event)">
-      <i class="fas fa-times"></i> <span data-i18n="closeButton">Close</span>
-    </button>
-  </div>
             </div>
+            <div class="org-card"><strong>Secretary General</strong><span>Bibata Diaw</span></div>
+            <div class="org-card"><strong>Deputy Secretary General</strong><span>—</span></div>
+            <div class="org-card"><strong>Fundraising Manager (U.S.)</strong><span>—</span></div>
+            <div class="org-card"><strong>Marketing Manager</strong><span>Binette Gueye</span></div>
+            <div class="org-card"><strong>Program Director</strong><span>Khady Diouf</span></div>
           </div>
         </div>
-      </section>
+    
+        <div class="org-category">
+          <h3 class="org-heading">Coordinators & Support Staff</h3>
+          <div class="org-grid">
+            <div class="org-card"><strong>Coordinators</strong><span>Khadeeja Diagne Thioye, Aby Thioye, Oumar Seck</span></div>
+            <div class="org-card"><strong>HR & Volunteers Manager</strong><span>Aissata Sall</span></div>
+            <div class="org-card"><strong>Assistants</strong><span>Rahma Sall, Fatou Binetou Niang, Yaye Sall</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section programs">
+      <div class="container">
+        <h2 class="section-title" data-i18n="programsTitle">Our Programs</h2>
+        <div class="program-grid">
+    
+          <!-- Clothing & Hygiene -->
+          <div class="program-card animate" onclick="toggleDetails(event)">
+            <div class="card-front">
+              <div class="program-icon">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <h3>Clothing & Hygiene</h3>
+              <p>Seasonal clothes for 500+ children & 300 hygiene kits</p>
+              <div class="program-link">Learn More →</div>
+            </div>
+            <div class="card-back">
+              <h4>Clothing & Hygiene Support</h4>
+              <ul class="program-details">
+                <li>👕 Clothing distribution for 500+ children</li>
+                <li>🧼 Hygiene kits with soap, toothpaste, menstrual items</li>
+                <li>📦 Focus on clean, seasonal, age-appropriate supplies</li>
+              </ul>
+              <button class="btn-close" onclick="toggleDetails(event)">
+                <i class="fas fa-times"></i> <span>Close</span>
+              </button>
+            </div>
+          </div>
+    
+          <!-- Medical Aid -->
+          <div class="program-card animate" onclick="toggleDetails(event)">
+            <div class="card-front">
+              <div class="program-icon">
+                <i class="fas fa-briefcase-medical"></i>
+              </div>
+              <h3>Medical Aid</h3>
+              <p>Basic medical kits for 1,500 kids & clinic donations</p>
+              <div class="program-link">Learn More →</div>
+            </div>
+            <div class="card-back">
+              <h4>Medical Assistance</h4>
+              <ul class="program-details">
+                <li>🩺 1,500 children receive basic medical kits</li>
+                <li>🏥 Support for 2–3 local clinics with medical supplies</li>
+                <li>📦 Prioritizing urgent and chronic care needs</li>
+              </ul>
+              <button class="btn-close" onclick="toggleDetails(event)">
+                <i class="fas fa-times"></i> <span>Close</span>
+              </button>
+            </div>
+          </div>
+    
+          <!-- Hospital Visits -->
+          <div class="program-card animate" onclick="toggleDetails(event)">
+            <div class="card-front">
+              <div class="program-icon">
+                <i class="fas fa-hospital-user"></i>
+              </div>
+              <h3>Hospital Support</h3>
+              <p>Quarterly visits with toys & emotional care</p>
+              <div class="program-link">Learn More →</div>
+            </div>
+            <div class="card-back">
+              <h4>Hospital Visits & Care</h4>
+              <ul class="program-details">
+                <li>🎁 Toys and comfort items for hospitalized children</li>
+                <li>❤️ Emotional support during quarterly hospital visits</li>
+                <li>👩‍⚕️ Focused on long-stay pediatric patients</li>
+              </ul>
+              <button class="btn-close" onclick="toggleDetails(event)">
+                <i class="fas fa-times"></i> <span>Close</span>
+              </button>
+            </div>
+          </div>
+    
+          <!-- Orphan Sponsorships -->
+          <div class="program-card animate" onclick="toggleDetails(event)">
+            <div class="card-front">
+              <div class="program-icon">
+                <i class="fas fa-child"></i>
+              </div>
+              <h3>Orphan Sponsorships</h3>
+              <p>Monthly aid for food, school & clothing</p>
+              <div class="program-link">Learn More →</div>
+            </div>
+            <div class="card-back">
+              <h4>Sponsorship Program</h4>
+              <ul class="program-details">
+                <li>👶 Support for 5 orphans through monthly aid</li>
+                <li>🎒 School fees, food, clothing, and essentials</li>
+                <li>🌍 Long-term commitment to growth & care</li>
+              </ul>
+              <button class="btn-close" onclick="toggleDetails(event)">
+                <i class="fas fa-times"></i> <span>Close</span>
+              </button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
       
       <section id="about" class="section">
         <div class="about-container">
@@ -1411,7 +1625,7 @@ footer {
                  We are a non-profit charity dedicated to helping children and communities in Senegal 
                   through sustainable solutions in healthcare, education, and essential resource distribution.
                 </p>
-                <div class="mission-stats">
+                <!-- <div class="mission-stats">
                   <div class="stat-item">
                     <div class="stat-number">15K+</div>
                     <div class="stat-label" data-i18n="childrenHelped">Children Helped</div>
@@ -1420,7 +1634,7 @@ footer {
                     <div class="stat-number">200+</div>
                     <div class="stat-label" data-i18n="communitiesReached">Communities Reached</div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -1489,7 +1703,7 @@ footer {
     <div class="footer-content container">
       <div class="footer-logo-section">
         <div class="footer-logo">
-          <img src="images/logo-1.png" alt="RABY'S SADAQA" class="footer-logo-image">
+          <img src="images/Raby_Sadaqa_logo_footer.png" alt="RABY'S SADAQA" class="footer-logo-image">
           <div class="footer-logo-text">RABY’S SADAQA</div>
           <p data-i18n="footerTagline">Empowering communities through sustainable solutions</p>
           <div class="social-links">
@@ -1663,7 +1877,7 @@ document.addEventListener("DOMContentLoaded", () => {
       heroTitle: "Empowering Communities in Senegal",
       heroText: "Providing sustainable solutions through education, healthcare, and essential resources",
       heroCta: "Support Our Cause",
-      programsTitle: "Our Core Programs",
+      programsTitle: "Our Programs",
       healthcareTitle: "Healthcare Access",
       healthcareText: "Mobile clinics and essential medicine distribution",
       educationTitle: "Education Support",
@@ -1672,7 +1886,7 @@ document.addEventListener("DOMContentLoaded", () => {
       goodsText: "Clothing, food packages, and hygiene kits",
       learnMore: "Learn More →",
       aboutTitle: "Our Mission",
-      aboutText: "We are a non-profit charity dedicated to helping children and communities in Senegal through sustainable solutions in healthcare, education, and essential resource distribution.",
+      aboutText: "We are a humanitarian association devoted to supporting sick and disadvantaged children in Senegal and beyond by providing essential resources such as food, clothing, medicine, and emotional care. Through sustainable, community-driven efforts, we uplift lives by aiding hospitals, Daras, orphanages, and vulnerable communities—empowering children to thrive with dignity and hope.",
       howToHelpTitle: "How You Can Help",
       donateTitle: "Make a Difference",
       donateText: "Your donation can help us change lives. Every contribution matters.",
