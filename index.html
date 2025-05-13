@@ -345,6 +345,11 @@
       font-size: 2.5rem;
       color: var(--primary-color);
       margin-bottom: 1.5rem;
+
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px; /* adjust as needed */
     }
 
     /* About Section */
@@ -467,6 +472,10 @@ footer {
   
   .footer-section:first-child {
     grid-column: auto;
+  }
+
+  .program-card {
+    margin-bottom: 40px;;
   }
 }
 
@@ -702,7 +711,7 @@ footer {
       }
 
       .program-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+        grid-template-columns: repeat(1, 1fr); /* 4 columns on desktop */
       }
     }
 
@@ -1433,75 +1442,103 @@ footer {
 
     <section class="mission-section" id="mission">
       <div class="container">
-        <h2 class="section-title">Mission Statement</h2>
+        <h2 class="section-title" data-i18n="missionTitle">Mission Statement</h2>
     
         <div class="mission-block">
-          <!-- <h3 class="subsection-title">Executive Summary</h3> -->
-          <p>Raby's Sadaqa is a humanitarian association committed to bringing hope, comfort, and vital support to sick and disadvantaged children, with a primary focus on Senegal, but extending its reach to the United States, Canada, and beyond. We provide essential resources—clothing, shoes, food, medication, toiletries, and more—while also offering emotional and moral support through hospital visits and sponsorship programs for orphans. Our mission is rooted in compassion, aiming to empower children and foster sustainable well-being within vulnerable communities.</p>
-    
-          <!-- <p><strong>Vision Statement:</strong> Our vision is a future where every child has access to basic necessities, education, and opportunities for a better life. We aspire to build a donor-driven, self-sustaining initiative that uplifts children and communities, particularly in Senegal, through lasting change and compassionate support.</p> -->
+          <p data-i18n="missionParagraph">
+            Raby's Sadaqa is a humanitarian association committed to bringing hope, comfort, and vital support to sick and disadvantaged children, with a primary focus on Senegal, but extending its reach to the United States, Canada, and beyond. We provide essential resources—clothing, shoes, food, medication, toiletries, and more—while also offering emotional and moral support through hospital visits and sponsorship programs for orphans. Our mission is rooted in compassion, aiming to empower children and foster sustainable well-being within vulnerable communities.
+          </p>
         </div>
     
         <div class="mission-block">
-          <h3 class="subsection-title">Core Values</h3>
+          <h3 class="subsection-title" data-i18n="coreValuesTitle">Core Values</h3>
           <ul class="values-list">
-            <li><strong>Compassion:</strong> Showing empathy and emotional support to children in need, especially during hospital visits and outreach efforts.</li>
-            <li><strong>Community:</strong> Driving collective impact through local engagement and collaboration.</li>
-            <li><strong>Sustainability:</strong> Creating long-term solutions in health, education, and self-sufficiency for future generations.</li>
-            <li><strong>Transparency:</strong> Maintaining open and honest communication with donors and stakeholders about resource allocation.</li>
-            <li><strong>Empowerment:</strong> Providing the tools and opportunities for children and communities to thrive independently.</li>
+            <li>
+              <strong data-i18n="valueCompassionLabel"></strong> <span data-i18n="valueCompassionText"></span>
+            </li>
+            <li>
+              <strong data-i18n="valueCommunityLabel"></strong> <span data-i18n="valueCommunityText"></span>
+            </li>
+            <li>
+              <strong data-i18n="valueSustainabilityLabel"></strong> <span data-i18n="valueSustainabilityText"></span>
+            </li>
+            <li>
+              <strong data-i18n="valueTransparencyLabel"></strong> <span data-i18n="valueTransparencyText"></span>
+            </li>
+            <li>
+              <strong data-i18n="valueEmpowermentLabel"></strong> <span data-i18n="valueEmpowermentText"></span>
+            </li>
           </ul>
         </div>
-    
-        <!-- <div class="mission-block">
-          <h3 class="subsection-title">Legal Status</h3>
-          <p>Raby’s Sadaqa plans to register as a 501(c)(3) nonprofit organization in the United States and establish formal NGO status in Senegal to effectively operate locally and expand our reach.</p>
-        </div> -->
       </div>
     </section>
 
     <section class="org-structure-section">
       <div class="container">
-        <h2 class="section-title">Our Team</h2>
+        <h2 class="section-title" data-i18n="teamTitle">Our Team</h2>
     
         <div class="org-category">
-          <h3 class="org-heading">Founders & Leadership</h3>
+          <h3 class="org-heading" data-i18n="leadershipTitle">Founders & Leadership</h3>
           <div class="org-grid">
             <div class="org-card">
               <img src="images/zaina-profile.png" alt="Ndeye Thioye" class="org-photo">
               <div class="org-info">
-                <strong>President</strong>
+                <strong data-i18n="presidentTitle">President</strong>
                 <span>Ndeye Thioye</span>
               </div>
             </div>
             <div class="org-card">
               <img src="images/soukeyna-profile.png" alt="Soukeyna Traore-Dia" class="org-photo">
               <div class="org-info">
-                <strong>Vice President</strong>
+                <strong data-i18n="vpTitle">Vice President</strong>
                 <span>Soukeyna Traore-Dia</span>
               </div>
             </div>
             <div class="org-card">
               <img src="images/profile.png" alt="Placeholder" class="org-photo">
               <div class="org-info">
-                <strong>Treasurer</strong>
+                <strong data-i18n="treasurerTitle">Treasurer</strong>
                 <span>Khadija Ba</span>
               </div>
             </div>
-            <div class="org-card"><strong>Secretary General</strong><span>Bibata Diaw</span></div>
-            <div class="org-card"><strong>Deputy Secretary General</strong><span>—</span></div>
-            <div class="org-card"><strong>Fundraising Manager (U.S.)</strong><span>—</span></div>
-            <div class="org-card"><strong>Marketing Manager</strong><span>Binette Gueye</span></div>
-            <div class="org-card"><strong>Program Director</strong><span>Khady Diouf</span></div>
+            <div class="org-card">
+              <strong data-i18n="secretaryGeneralTitle">Secretary General</strong>
+              <span>Bibata Diaw</span>
+            </div>
+            <div class="org-card">
+              <strong data-i18n="deputySecretaryTitle">Deputy Secretary General</strong>
+              <span>—</span>
+            </div>
+            <div class="org-card">
+              <strong data-i18n="fundraisingTitle">Fundraising Manager (U.S.)</strong>
+              <span>—</span>
+            </div>
+            <div class="org-card">
+              <strong data-i18n="marketingTitle">Marketing Manager</strong>
+              <span>Binette Gueye</span>
+            </div>
+            <div class="org-card">
+              <strong data-i18n="programDirectorTitle">Program Director</strong>
+              <span>Khady Diouf</span>
+            </div>
           </div>
         </div>
     
         <div class="org-category">
-          <h3 class="org-heading">Coordinators & Support Staff</h3>
+          <h3 class="org-heading" data-i18n="supportStaffTitle">Coordinators & Support Staff</h3>
           <div class="org-grid">
-            <div class="org-card"><strong>Coordinators</strong><span>Khadeeja Diagne Thioye, Aby Thioye, Oumar Seck</span></div>
-            <div class="org-card"><strong>HR & Volunteers Manager</strong><span>Aissata Sall</span></div>
-            <div class="org-card"><strong>Assistants</strong><span>Rahma Sall, Fatou Binetou Niang, Yaye Sall</span></div>
+            <div class="org-card">
+              <strong data-i18n="coordinatorsTitle">Coordinators</strong>
+              <span>Khadeeja Diagne Thioye, Aby Thioye, Oumar Seck</span>
+            </div>
+            <div class="org-card">
+              <strong data-i18n="hrTitle">HR & Volunteers Manager</strong>
+              <span>Aissata Sall</span>
+            </div>
+            <div class="org-card">
+              <strong data-i18n="assistantsTitle">Assistants</strong>
+              <span>Rahma Sall, Fatou Binetou Niang, Yaye Sall</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1518,19 +1555,19 @@ footer {
               <div class="program-icon">
                 <i class="fas fa-tshirt"></i>
               </div>
-              <h3>Clothing & Hygiene</h3>
-              <p>Seasonal clothes for 500+ children & 300 hygiene kits</p>
-              <div class="program-link">Learn More →</div>
+              <h3 data-i18n="programClothingTitle">Clothing & Hygiene</h3>
+              <p data-i18n="programClothingSummary">Seasonal clothes for 500+ children & 300 hygiene kits</p>
+              <div class="program-link" data-i18n="learnMore">Learn More →</div>
             </div>
             <div class="card-back">
-              <h4>Clothing & Hygiene Support</h4>
+              <h4 data-i18n="programClothingBackTitle">Clothing & Hygiene Support</h4>
               <ul class="program-details">
-                <li>👕 Clothing distribution for 500+ children</li>
-                <li>🧼 Hygiene kits with soap, toothpaste, menstrual items</li>
-                <li>📦 Focus on clean, seasonal, age-appropriate supplies</li>
+                <li data-i18n="programClothingDetail1">👕 Clothing distribution for 500+ children</li>
+                <li data-i18n="programClothingDetail2">🧼 Hygiene kits with soap, toothpaste, menstrual items</li>
+                <li data-i18n="programClothingDetail3">📦 Focus on clean, seasonal, age-appropriate supplies</li>
               </ul>
               <button class="btn-close" onclick="toggleDetails(event)">
-                <i class="fas fa-times"></i> <span>Close</span>
+                <i class="fas fa-times"></i> <span data-i18n="closeButton">Close</span>
               </button>
             </div>
           </div>
@@ -1541,19 +1578,19 @@ footer {
               <div class="program-icon">
                 <i class="fas fa-briefcase-medical"></i>
               </div>
-              <h3>Medical Aid</h3>
-              <p>Basic medical kits for 1,500 kids & clinic donations</p>
-              <div class="program-link">Learn More →</div>
+              <h3 data-i18n="programMedicalTitle">Medical Aid</h3>
+              <p data-i18n="programMedicalSummary">Basic medical kits for 1,500 kids & clinic donations</p>
+              <div class="program-link" data-i18n="learnMore">Learn More →</div>
             </div>
             <div class="card-back">
-              <h4>Medical Assistance</h4>
+              <h4 data-i18n="programMedicalBackTitle">Medical Assistance</h4>
               <ul class="program-details">
-                <li>🩺 1,500 children receive basic medical kits</li>
-                <li>🏥 Support for 2–3 local clinics with medical supplies</li>
-                <li>📦 Prioritizing urgent and chronic care needs</li>
+                <li data-i18n="programMedicalDetail1">🩺 1,500 children receive basic medical kits</li>
+                <li data-i18n="programMedicalDetail2">🏥 Support for 2–3 local clinics with medical supplies</li>
+                <li data-i18n="programMedicalDetail3">📦 Prioritizing urgent and chronic care needs</li>
               </ul>
               <button class="btn-close" onclick="toggleDetails(event)">
-                <i class="fas fa-times"></i> <span>Close</span>
+                <i class="fas fa-times"></i> <span data-i18n="closeButton">Close</span>
               </button>
             </div>
           </div>
@@ -1564,19 +1601,19 @@ footer {
               <div class="program-icon">
                 <i class="fas fa-hospital-user"></i>
               </div>
-              <h3>Hospital Support</h3>
-              <p>Quarterly visits with toys & emotional care</p>
-              <div class="program-link">Learn More →</div>
+              <h3 data-i18n="programHospitalTitle">Hospital Support</h3>
+              <p data-i18n="programHospitalSummary">Quarterly visits with toys & emotional care</p>
+              <div class="program-link" data-i18n="learnMore">Learn More →</div>
             </div>
             <div class="card-back">
-              <h4>Hospital Visits & Care</h4>
+              <h4 data-i18n="programHospitalBackTitle">Hospital Visits & Care</h4>
               <ul class="program-details">
-                <li>🎁 Toys and comfort items for hospitalized children</li>
-                <li>❤️ Emotional support during quarterly hospital visits</li>
-                <li>👩‍⚕️ Focused on long-stay pediatric patients</li>
+                <li data-i18n="programHospitalDetail1">🎁 Toys and comfort items for hospitalized children</li>
+                <li data-i18n="programHospitalDetail2">❤️ Emotional support during quarterly hospital visits</li>
+                <li data-i18n="programHospitalDetail3">👩‍⚕️ Focused on long-stay pediatric patients</li>
               </ul>
               <button class="btn-close" onclick="toggleDetails(event)">
-                <i class="fas fa-times"></i> <span>Close</span>
+                <i class="fas fa-times"></i> <span data-i18n="closeButton">Close</span>
               </button>
             </div>
           </div>
@@ -1587,19 +1624,19 @@ footer {
               <div class="program-icon">
                 <i class="fas fa-child"></i>
               </div>
-              <h3>Orphan Sponsorships</h3>
-              <p>Monthly aid for food, school & clothing</p>
-              <div class="program-link">Learn More →</div>
+              <h3 data-i18n="programOrphanTitle">Orphan Sponsorships</h3>
+              <p data-i18n="programOrphanSummary">Monthly aid for food, school & clothing</p>
+              <div class="program-link" data-i18n="learnMore">Learn More →</div>
             </div>
             <div class="card-back">
-              <h4>Sponsorship Program</h4>
+              <h4 data-i18n="programOrphanBackTitle">Sponsorship Program</h4>
               <ul class="program-details">
-                <li>👶 Support for 5 orphans through monthly aid</li>
-                <li>🎒 School fees, food, clothing, and essentials</li>
-                <li>🌍 Long-term commitment to growth & care</li>
+                <li data-i18n="programOrphanDetail1">👶 Support for 5 orphans through monthly aid</li>
+                <li data-i18n="programOrphanDetail2">🎒 School fees, food, clothing, and essentials</li>
+                <li data-i18n="programOrphanDetail3">🌍 Long-term commitment to growth & care</li>
               </ul>
               <button class="btn-close" onclick="toggleDetails(event)">
-                <i class="fas fa-times"></i> <span>Close</span>
+                <i class="fas fa-times"></i> <span data-i18n="closeButton">Close</span>
               </button>
             </div>
           </div>
@@ -1901,25 +1938,62 @@ document.addEventListener("DOMContentLoaded", () => {
       copyright: "© RABY’S SADAQA. All rights reserved.",
       childrenHelped: "Children Helped",
     communitiesReached: "Communities Reached",
-    healthcareInitiativesTitle: "Healthcare Initiatives",
-    healthcareInitiatives1: "📌 Monthly mobile clinics serving 50+ villages",
-    healthcareInitiatives2: "💊 Free essential medicines distribution",
-    healthcareInitiatives3: "👩⚕️ Trained community health workers",
-    healthcareInitiatives4: "💉 Vaccination programs for children",
     
-    educationProgramsTitle: "Education Programs",
-    educationPrograms1: "📚 Annual school kits for 10,000+ students",
-    educationPrograms2: "🏫 15 new schools built in 2023",
-    educationPrograms3: "👩🏫 Teacher training programs",
-    educationPrograms4: "💻 Digital literacy initiatives",
-    
-    essentialsDistributionTitle: "Essential Goods Distribution",
-    essentialsDistribution1: "👕 50,000+ clothing items distributed annually",
-    essentialsDistribution2: "🥫 Weekly food packages for families in need",
-    essentialsDistribution3: "🧼 Hygiene kits with sanitation supplies",
-    essentialsDistribution4: "🛒 Community pantry programs",
-    
-    closeButton: "Close"
+  programsTitle: "Our Programs",
+  programClothingTitle: "Clothing & Hygiene",
+  programClothingSummary: "Seasonal clothes for 500+ children & 300 hygiene kits",
+  programClothingBackTitle: "Clothing & Hygiene Support",
+  programClothingDetail1: "👕 Clothing distribution for 500+ children",
+  programClothingDetail2: "🧼 Hygiene kits with soap, toothpaste, menstrual items",
+  programClothingDetail3: "📦 Focus on clean, seasonal, age-appropriate supplies",
+  programMedicalTitle: "Medical Aid",
+  programMedicalSummary: "Basic medical kits for 1,500 kids & clinic donations",
+  programMedicalBackTitle: "Medical Assistance",
+  programMedicalDetail1: "🩺 1,500 children receive basic medical kits",
+  programMedicalDetail2: "🏥 Support for 2–3 local clinics with medical supplies",
+  programMedicalDetail3: "📦 Prioritizing urgent and chronic care needs",
+  programHospitalTitle: "Hospital Support",
+  programHospitalSummary: "Quarterly visits with toys & emotional care",
+  programHospitalBackTitle: "Hospital Visits & Care",
+  programHospitalDetail1: "🎁 Toys and comfort items for hospitalized children",
+  programHospitalDetail2: "❤️ Emotional support during quarterly hospital visits",
+  programHospitalDetail3: "👩‍⚕️ Focused on long-stay pediatric patients",
+  programOrphanTitle: "Orphan Sponsorships",
+  programOrphanSummary: "Monthly aid for food, school & clothing",
+  programOrphanBackTitle: "Sponsorship Program",
+  programOrphanDetail1: "👶 Support for 5 orphans through monthly aid",
+  programOrphanDetail2: "🎒 School fees, food, clothing, and essentials",
+  programOrphanDetail3: "🌍 Long-term commitment to growth & care",
+  learnMore: "Learn More →",
+  closeButton: "Close",
+
+    missionTitle: "Mission Statement",
+  missionParagraph: "Raby's Sadaqa is a humanitarian association committed to bringing hope, comfort, and vital support to sick and disadvantaged children, with a primary focus on Senegal, but extending its reach to the United States, Canada, and beyond. We provide essential resources—clothing, shoes, food, medication, toiletries, and more—while also offering emotional and moral support through hospital visits and sponsorship programs for orphans. Our mission is rooted in compassion, aiming to empower children and foster sustainable well-being within vulnerable communities.",
+coreValuesTitle: "Core Values",
+valueCompassionLabel: "Compassion:",
+valueCompassionText: "Showing empathy and emotional support to children in need, especially during hospital visits and outreach efforts.",
+valueCommunityLabel: "Community:",
+valueCommunityText: "Driving collective impact through local engagement and collaboration.",
+valueSustainabilityLabel: "Sustainability:",
+valueSustainabilityText: "Creating long-term solutions in health, education, and self-sufficiency for future generations.",
+valueTransparencyLabel: "Transparency:",
+valueTransparencyText: "Maintaining open and honest communication with donors and stakeholders about resource allocation.",
+valueEmpowermentLabel: "Empowerment:",
+valueEmpowermentText: "Providing the tools and opportunities for children and communities to thrive independently.",
+teamTitle: "Our Team",
+leadershipTitle: "Founders & Leadership",
+presidentTitle: "President",
+vpTitle: "Vice President",
+treasurerTitle: "Treasurer",
+secretaryGeneralTitle: "Secretary General",
+deputySecretaryTitle: "Deputy Secretary General",
+fundraisingTitle: "Fundraising Manager (U.S.)",
+marketingTitle: "Marketing Manager",
+programDirectorTitle: "Program Director",
+supportStaffTitle: "Coordinators & Support Staff",
+coordinatorsTitle: "Coordinators",
+hrTitle: "HR & Volunteers Manager",
+assistantsTitle: "Assistants",
     },
     fr: {
       // Add all French translations
@@ -1961,25 +2035,66 @@ document.addEventListener("DOMContentLoaded", () => {
     registeredNGO: "ONG enregistrée sous la loi sénégalaise",
     childrenHelped: "Enfants aidés",
     communitiesReached: "Communautés touchées",
-    healthcareInitiativesTitle: "Initiatives de santé",
-    healthcareInitiatives1: "📌 Cliniques mobiles mensuelles desservant 50+ villages",
-    healthcareInitiatives2: "💊 Distribution gratuite de médicaments essentiels",
-    healthcareInitiatives3: "👩⚕️ Agents de santé communautaires formés",
-    healthcareInitiatives4: "💉 Programmes de vaccination pour les enfants",
+    programsTitle: "Nos Programmes",
+  programClothingTitle: "Vêtements & Hygiène",
+  programClothingSummary: "Vêtements saisonniers pour plus de 500 enfants et 300 kits d'hygiène",
+  programClothingBackTitle: "Soutien en Vêtements & Hygiène",
+  programClothingDetail1: "👕 Distribution de vêtements pour plus de 500 enfants",
+  programClothingDetail2: "🧼 Kits d'hygiène avec savon, dentifrice, produits menstruels",
+  programClothingDetail3: "📦 Fournitures propres, saisonnières et adaptées à l'âge",
+  
+  programMedicalTitle: "Aide Médicale",
+  programMedicalSummary: "Kits médicaux de base pour 1 500 enfants et dons aux cliniques",
+  programMedicalBackTitle: "Assistance Médicale",
+  programMedicalDetail1: "🩺 1 500 enfants reçoivent des kits médicaux de base",
+  programMedicalDetail2: "🏥 Soutien à 2–3 cliniques locales avec des fournitures médicales",
+  programMedicalDetail3: "📦 Priorité aux besoins urgents et soins chroniques",
+
+  programHospitalTitle: "Soutien Hospitalier",
+  programHospitalSummary: "Visites trimestrielles avec jouets et soutien émotionnel",
+  programHospitalBackTitle: "Visites & Soins Hospitaliers",
+  programHospitalDetail1: "🎁 Jouets et objets réconfortants pour enfants hospitalisés",
+  programHospitalDetail2: "❤️ Soutien émotionnel lors des visites trimestrielles",
+  programHospitalDetail3: "👩‍⚕️ Ciblé sur les patients pédiatriques de longue durée",
+
+  programOrphanTitle: "Parrainage d'Orphelins",
+  programOrphanSummary: "Aide mensuelle pour nourriture, école et vêtements",
+  programOrphanBackTitle: "Programme de Parrainage",
+  programOrphanDetail1: "👶 Soutien à 5 orphelins grâce à une aide mensuelle",
+  programOrphanDetail2: "🎒 Frais scolaires, nourriture, vêtements et articles essentiels",
+  programOrphanDetail3: "🌍 Engagement à long terme pour le développement et les soins",
+
+  learnMore: "En savoir plus →",
+  closeButton: "Fermer",
     
-    educationProgramsTitle: "Programmes éducatifs",
-    educationPrograms1: "📚 Kits scolaires annuels pour 10 000+ élèves",
-    educationPrograms2: "🏫 15 nouvelles écoles construites en 2023",
-    educationPrograms3: "👩🏫 Programmes de formation des enseignants",
-    educationPrograms4: "💻 Initiatives d'alphabétisation numérique",
-    
-    essentialsDistributionTitle: "Distribution de biens essentiels",
-    essentialsDistribution1: "👕 50 000+ vêtements distribués annuellement",
-    essentialsDistribution2: "🥫 Colis alimentaires hebdomadaires pour les familles dans le besoin",
-    essentialsDistribution3: "🧼 Kits d'hygiène avec fournitures sanitaires",
-    essentialsDistribution4: "🛒 Programmes de garde-manger communautaire",
-    
-    closeButton: "Fermer"
+  missionTitle: "Déclaration de mission",
+  missionParagraph: "Raby's Sadaqa est une association humanitaire engagée à apporter espoir, réconfort et soutien vital aux enfants malades et défavorisés, avec un accent particulier sur le Sénégal, mais étendant son action aux États-Unis, au Canada et au-delà. Nous fournissons des ressources essentielles — vêtements, chaussures, nourriture, médicaments, articles de toilette, etc. — tout en offrant un soutien moral et émotionnel par le biais de visites à l’hôpital et de programmes de parrainage pour les orphelins. Notre mission est enracinée dans la compassion et vise à autonomiser les enfants et à favoriser le bien-être durable au sein des communautés vulnérables.",
+  coreValuesTitle: "Valeurs fondamentales",
+  valueCompassionLabel: "Compassion :",
+valueCompassionText: "Faire preuve d’empathie et de soutien émotionnel envers les enfants dans le besoin, notamment lors des visites à l’hôpital et des actions de proximité.",
+valueCommunityLabel: "Communauté :",
+valueCommunityText: "Favoriser l’impact collectif grâce à l’engagement local et à la collaboration.",
+valueSustainabilityLabel: "Durabilité :",
+valueSustainabilityText: "Créer des solutions à long terme en matière de santé, d’éducation et d’autosuffisance pour les générations futures.",
+valueTransparencyLabel: "Transparence :",
+valueTransparencyText: "Maintenir une communication ouverte et honnête avec les donateurs et les parties prenantes concernant l’utilisation des ressources.",
+valueEmpowermentLabel: "Autonomisation :",
+valueEmpowermentText: "Fournir les outils et les opportunités permettant aux enfants et aux communautés de prospérer de manière autonome.",
+teamTitle: "Notre Équipe",
+leadershipTitle: "Fondateurs et Direction",
+presidentTitle: "Présidente",
+vpTitle: "Vice-Présidente",
+treasurerTitle: "Trésorière",
+secretaryGeneralTitle: "Secrétaire Générale",
+deputySecretaryTitle: "Secrétaire Générale Adjointe",
+fundraisingTitle: "Responsable de la Collecte de Fonds (É.-U.)",
+marketingTitle: "Responsable Marketing",
+programDirectorTitle: "Directrice de Programme",
+supportStaffTitle: "Coordinateurs et Personnel de Soutien",
+coordinatorsTitle: "Coordinateurs",
+hrTitle: "Responsable RH & Bénévoles",
+assistantsTitle: "Assistantes",
+
     }
   };
 
