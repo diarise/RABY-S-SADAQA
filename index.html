@@ -1357,8 +1357,8 @@ footer {
 }
 
 .org-photo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--secondary-color);
@@ -1494,50 +1494,77 @@ footer {
                 <span>Soukeyna Traore-Dia</span>
               </div>
             </div>
-            <div class="org-card">
+            <!-- <div class="org-card">
               <img src="images/profile.png" alt="Placeholder" class="org-photo">
+              <div class="org-info">
+                <strong data-i18n="treasurerTitle">Treasurer</strong>
+                <span>Khadija Ba</span>
+              </div>
+            </div> -->
+            <div class="org-card">
+              <img src="images/Khadija_Ba.jpeg" alt="SKhadija Ba" class="org-photo">
               <div class="org-info">
                 <strong data-i18n="treasurerTitle">Treasurer</strong>
                 <span>Khadija Ba</span>
               </div>
             </div>
             <div class="org-card">
-              <strong data-i18n="secretaryGeneralTitle">Secretary General</strong>
-              <span>Bibata Diaw</span>
+              <img src="images/Bibata_Diaw.png" alt="Bibata Diaw" class="org-photo">
+              <div class="org-info">
+                <strong data-i18n="secretaryGeneralTitle">Secretary General</strong>
+                <span>Bibata Diaw</span>
+              </div>
             </div>
-            <div class="org-card">
+            <!-- <div class="org-card">
               <strong data-i18n="deputySecretaryTitle">Deputy Secretary General</strong>
               <span>—</span>
-            </div>
-            <div class="org-card">
+            </div> -->
+            <!-- <div class="org-card">
               <strong data-i18n="fundraisingTitle">Fundraising Manager (U.S.)</strong>
               <span>—</span>
+            </div> -->
+            <div class="org-card">
+              <img src="images/Binette_Gueye.png" alt="Binette Gueye" class="org-photo">
+              <div class="org-info">
+                <strong data-i18n="marketingTitle">Marketing Manager</strong>
+                <span>Binette Gueye</span>
+              </div>
             </div>
             <div class="org-card">
-              <strong data-i18n="marketingTitle">Marketing Manager</strong>
-              <span>Binette Gueye</span>
+
+              <img src="images/Khady_Diouf.png" alt="Khady Diouf" class="org-photo">
+              <div class="org-info">
+                <strong data-i18n="programDirectorTitle">Program Director</strong>
+                <span>Khady Diouf</span>
+              </div>
+            </div>
+          
+            <div class="org-card">
+
+              <img src="images/Aby_Thioye.jpeg" alt="Aby Thioye" class="org-photo">
+              <div class="org-info">
+                <strong data-i18n="coordinatorsTitle">Coordinators</strong>
+                <span>Aby Thioye, Khadeeja Diagne Thioye, Oumar Seck</span>
+              </div>
+
+
+              
             </div>
             <div class="org-card">
-              <strong data-i18n="programDirectorTitle">Program Director</strong>
-              <span>Khady Diouf</span>
-            </div>
-          </div>
-        </div>
-    
-        <div class="org-category">
-          <h3 class="org-heading" data-i18n="supportStaffTitle">Coordinators & Support Staff</h3>
-          <div class="org-grid">
-            <div class="org-card">
-              <strong data-i18n="coordinatorsTitle">Coordinators</strong>
-              <span>Khadeeja Diagne Thioye, Aby Thioye, Oumar Seck</span>
-            </div>
-            <div class="org-card">
-              <strong data-i18n="hrTitle">HR & Volunteers Manager</strong>
-              <span>Aissata Sall</span>
+
+              
+                <img src="images/profile.png" alt="Placeholder" class="org-photo">
+                <div class="org-info">
+                  <strong data-i18n="hrTitle">HR & Volunteers Manager</strong>
+                  <span>Aissata Sall</span>
+                </div>
+              
+
+              
             </div>
             <div class="org-card">
               <strong data-i18n="assistantsTitle">Assistants</strong>
-              <span>Rahma Sall, Fatou Binetou Niang, Yaye Sall</span>
+              <!-- <span>Rahma Sall, Fatou Binetou Niang, Yaye Sall</span> -->
             </div>
           </div>
         </div>
@@ -1901,12 +1928,8 @@ document.addEventListener('click', (e) => {
 <script>
    // Updated Language Switching Code
 document.addEventListener("DOMContentLoaded", () => {
-  // ... existing code ...
-
-  // Translations object with all required keys
   const translations = {
     en: {
-      // Add all translation keys
       navAbout: "About",
       navPrograms: "Programs",
       navDonate: "Donate",
@@ -1938,6 +1961,7 @@ document.addEventListener("DOMContentLoaded", () => {
       copyright: "© RABY’S SADAQA. All rights reserved.",
       childrenHelped: "Children Helped",
     communitiesReached: "Communities Reached",
+    donateNow: "Donate Now",
     
   programsTitle: "Our Programs",
   programClothingTitle: "Clothing & Hygiene",
@@ -1994,6 +2018,10 @@ supportStaffTitle: "Coordinators & Support Staff",
 coordinatorsTitle: "Coordinators",
 hrTitle: "HR & Volunteers Manager",
 assistantsTitle: "Assistants",
+sendMessage: "Send Message",
+helpList1: "Donate clothes, medication, or essentials",
+    helpList2: "Volunteer your time or services",
+    helpList3: "Make a financial contribution",
     },
     fr: {
       // Add all French translations
@@ -2098,6 +2126,31 @@ assistantsTitle: "Assistantes",
     }
   };
 
+
+  function switchLanguage(lang) {
+      const elements = document.querySelectorAll("[data-i18n]");
+      elements.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const translation = translations[lang][key];
+        if (translation) {
+          el.innerText = translation;
+        }
+      });
+    }
+
+    // Event listeners for language buttons
+    const langButtons = document.querySelectorAll("[data-lang]");
+    langButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const selectedLang = button.getAttribute("data-lang");
+        switchLanguage(selectedLang);
+      });
+    });
+
+    // Optional: Set default language
+    switchLanguage("en");
+
+
   // Safe element query function
   function getElement(selector) {
     const el = document.querySelector(selector);
@@ -2120,13 +2173,16 @@ assistantsTitle: "Assistantes",
       });
 
       // Update form placeholders
-      const nameInput = getElement('[name="name"]');
-      const emailInput = getElement('[name="email"]');
-      const messageInput = getElement('[name="message"]');
-      
-      if (nameInput) nameInput.placeholder = lang === 'en' ? 'Your Name' : 'Votre nom';
-      if (emailInput) emailInput.placeholder = lang === 'en' ? 'Your Email' : 'Votre email';
-      if (messageInput) messageInput.placeholder = lang === 'en' ? 'Your Message' : 'Votre message';
+      // Function to update the placeholders based on selected language
+  function updatePlaceholders(lang) {
+    const nameInput = getElement('[name="name"]');
+    const emailInput = getElement('[name="email"]');
+    const messageInput = getElement('[name="message"]');
+
+    if (nameInput) nameInput.placeholder = lang === 'en' ? 'Your Name' : 'Votre nom';
+    if (emailInput) emailInput.placeholder = lang === 'en' ? 'Your Email' : 'Votre email';
+    if (messageInput) messageInput.placeholder = lang === 'en' ? 'Your Message' : 'Votre message';
+  }
 
       // Update CTA button safely
       const ctaButton = getElement('.btn-cta');
