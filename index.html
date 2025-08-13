@@ -1381,6 +1381,78 @@ footer {
   opacity: 0.85;
 }
 
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+.gallery-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: auto;
+}
+.gallery-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+.gallery-item p {
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+.lightbox-content {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+.close:hover {
+    color: #f1f1f1;
+}
+
   </style>
 </head>
 <body>
@@ -1395,6 +1467,7 @@ footer {
 <ul class="nav-links" id="navLinks">
     <li><a href="#about" data-i18n="navAbout">About</a></li>
     <li><a href="#programs" data-i18n="navPrograms">Programs</a></li>
+    <li><a href="#gallery" data-i18n="navImpact">Impact</a></li>
     <li><a href="#donate" data-i18n="navDonate">Donate</a></li>
     <li><a href="#contact" data-i18n="navContact">Contact</a></li>
   </ul>
@@ -1731,6 +1804,43 @@ footer {
         </div>
       </section>
 
+      <section id="gallery" class="gallery-section">
+        <h2 class="section-title" data-i18n="galleryTitle">Our Impact</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/kids-donation-1.jpeg" alt="Distribution of children's clothing">
+                <p data-i18n="galleryItem1">Distribution of children's clothing</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/hospital-visit-3.jpeg" alt="Hospital visit">
+                <p data-i18n="galleryItem2">Hospital visit</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/baby-formula.jpeg" alt="Baby formula delivery">
+                <p data-i18n="galleryItem3">Baby formula delivery</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/kids-stuff.jpeg" alt="Bags of donated items">
+                <p data-i18n="galleryItem4">Bags of donated items</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/hospital-visit-1.jpeg" alt="Hospital visit with donations for a baby's parent">
+                <p data-i18n="galleryItem5">Hospital visit with donations for a baby's parent</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/hospital-visit.jpeg" alt="Distribution of donation bags">
+                <p data-i18n="galleryItem6">Distribution of donation bags</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
+
     <section id="how-to-help" class="section light">
         <div class="container">
           <h2 class="section-title" data-i18n="howToHelpTitle">How You Can Help</h2>
@@ -1740,7 +1850,7 @@ footer {
           <li data-i18n="helpList2">Volunteer your time or services</li>
           <li data-i18n="helpList3">Make a financial contribution</li>
         </ul>
-        <img src="images/volunteer.jpg" alt="Volunteering" class="section-image">
+        <img src="images/baby-item-1.jpeg" alt="Volunteering" class="section-image">
     </div>
   </div>
 </section>
@@ -2048,6 +2158,14 @@ sendMessage: "Send Message",
 helpList1: "Donate clothes, medication, or essentials",
     helpList2: "Volunteer your time or services",
     helpList3: "Make a financial contribution",
+    galleryIitle: "Our Impact",
+    galleryItem1: "Distribution of children's clothing",
+    galleryItem2: "Hospital visit",
+    galleryItem3: "Baby formula delivery",
+    galleryItem4: "Bags of donated items",
+    galleryItem5: "Hospital visit with donations for a baby's parent",
+    galleryItem6: "Distribution of donation bags",
+    navImpact: "Impact",
     },
     fr: {
       // Add all French translations
@@ -2148,7 +2266,14 @@ supportStaffTitle: "Coordinateurs et Personnel de Soutien",
 coordinatorsTitle: "Coordinateur",
 hrTitle: "Responsable RH & Bénévoles",
 assistantsTitle: "Assistantes",
-
+galleryTitle: "Notre Impact",
+    galleryItem1: "Distribution de vêtements pour enfants",
+    galleryItem2: "Visite à l'hôpital",
+    galleryItem3: "Livraison de lait maternisé",
+    galleryItem4: "Sacs d'articles donnés",
+    galleryItem5: "Visite à l'hôpital avec dons pour un parent de bébé",
+    galleryItem6: "Distribution de sacs de dons",
+    navImpact: "Impact",
     }
   };
 
@@ -2286,5 +2411,30 @@ function updateLanguageSwitcher(lang) {
 // Call this inside switchLanguage function after translations
 updateLanguageSwitcher(lang);
   </script>
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const captionText = document.getElementById("caption");
+    const closeBtn = document.querySelector(".close");
+    
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "block";
+            lightboxImg.src = img.src;
+            captionText.textContent = img.alt;
+        });
+    });
+    
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+    
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+    </script>
 </body>
 </html>
